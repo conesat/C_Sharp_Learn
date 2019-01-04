@@ -53,10 +53,10 @@
     <Compile Include="form\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPointForm.cs">
+    <Compile Include="form\MainPointForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainPointForm.Designer.cs">
+    <Compile Include="form\MainPointForm.Designer.cs">
       <DependentUpon>MainPointForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -64,7 +64,7 @@
     <EmbeddedResource Include="form\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainPointForm.resx">
+    <EmbeddedResource Include="form\MainPointForm.resx">
       <DependentUpon>MainPointForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
