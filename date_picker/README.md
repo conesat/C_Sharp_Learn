@@ -6,4 +6,4 @@
 - 没有年份 月份选择
 
 # 录屏
- ![此处输入图片的描述](https://github.com/conesat/C_Sharp_Learn/blob/master/weekly_note/rec/rec.gif)
+ ![此处输入图片的描述](https://github.com/conesat/C_Sharp_Learn/blob/master/date_picker/rec/REC.gif)
