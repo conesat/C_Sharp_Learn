@@ -7,6 +7,5 @@
 
 便签
 # 录屏
-
-
+ ![此处输入图片的描述](https://github.com/conesat/C_Sharp_Learn/blob/master/weekly_note/rec/rec.gif)
  ![此处输入图片的描述](https://github.com/conesat/C_Sharp_Learn/blob/master/weekly_note/rec/REC2.gif)
