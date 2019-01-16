@@ -74,6 +74,7 @@
   <ItemGroup>
     <Content Include="img\left.png" />
     <Content Include="img\rbg.png" />
+    <None Include="img\rbg1.png" />
     <Content Include="img\right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

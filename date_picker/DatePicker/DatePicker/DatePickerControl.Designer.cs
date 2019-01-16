@@ -9,6 +9,9 @@ namespace DatePicker
         private int pickYear;//选择的年份
         private int pickMoth;//选择的月份
         private int pickDay;//选择的天
+
+        private String picDate = "";//点击的日期
+
         private Boolean pick = false;
         private System.Windows.Forms.Label pickLabel = null;
         /// <summary>
@@ -60,38 +63,55 @@ namespace DatePicker
                     tableLayoutPanel1.Controls[i].Controls[0].Click += MainControl_Click;
                 }
             }
-
-
         }
 
         //日期点击事件
         private void MainControl_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Label label = (System.Windows.Forms.Label)sender;
-            if (PickerDate != null) {
+          
+            if (PickerDate != null)
+            {
                 PickerDate(this, label.Tag.ToString());
             }
-        
+
             if (pickLabel == null)
             {
                 pickLabel = label;
                 pick = true;
-                pickLabel.Parent.BackColor = Color.White;
+                if (this.BackColor.Equals(System.Drawing.SystemColors.Control))
+                {
+                    pickLabel.Parent.BackColor = Color.White;
+                }
+                else
+                {
+                    pickLabel.Parent.BackColor = System.Drawing.SystemColors.ControlDark;
+                }
             }
             else
             {
-                if (label.Equals(pickLabel) && pick)
+                if (label.Equals(pickLabel) && pick && label.Tag.ToString().Equals(picDate))
                 {
                     pick = false;
-                    pickLabel.Parent.BackColor = System.Drawing.SystemColors.Control;
+                    pickLabel.Parent.BackColor = this.BackColor;
                 }
-                else {
+                else
+                {
                     pick = true;
-                    pickLabel.Parent.BackColor = System.Drawing.SystemColors.Control;
+                    pickLabel.Parent.BackColor = this.BackColor;
                     pickLabel = label;
-                    pickLabel.Parent.BackColor = Color.White;
+                    if (this.BackColor.Equals(System.Drawing.SystemColors.Control))
+                    {
+                        pickLabel.Parent.BackColor = Color.White;
+                    }
+                    else
+                    {
+                        pickLabel.Parent.BackColor = System.Drawing.SystemColors.ControlDark;
+                    }
+
                 }
             }
+            picDate = label.Tag.ToString();
         }
 
 
@@ -150,36 +170,56 @@ namespace DatePicker
             int temp = week - 2;
             if (pickLabel != null)
             {
-                pickLabel.Parent.BackColor = System.Drawing.SystemColors.Control;
+                pickLabel.Parent.BackColor = this.BackColor;
             }
 
             for (int i = 0; i < week - 1; i++)
             {
-                tableLayoutPanel1.Controls[i].Controls[0].Parent.BackColor = System.Drawing.SystemColors.Control;
-                tableLayoutPanel1.Controls[i].Controls[0].BackColor = System.Drawing.SystemColors.Control;
+               
+                tableLayoutPanel1.Controls[i].Controls[0].Parent.BackColor = this.BackColor;
+                tableLayoutPanel1.Controls[i].Controls[0].BackColor = this.BackColor;
                 tableLayoutPanel1.Controls[i].Controls[0].ForeColor = System.Drawing.SystemColors.ControlDark;
                 tableLayoutPanel1.Controls[i].Controls[0].Text = (beforLastDay.Day - temp) + "";
                 tableLayoutPanel1.Controls[i].Controls[0].Tag = beforMoth[0] + "-" + beforMoth[1] + "-" + (beforLastDay.Day - temp);
+                if (pick && pickLabel != null && (beforMoth[0] + "-" + beforMoth[1] + "-" + (beforLastDay.Day - temp)).Equals(picDate))
+                {
+                    pickLabel = (System.Windows.Forms.Label)tableLayoutPanel1.Controls[i].Controls[0];
+                    if (this.BackColor.Equals(System.Drawing.SystemColors.Control))
+                    {
+                        pickLabel.Parent.BackColor = Color.White;
+                    }
+                    else
+                    {
+                        pickLabel.Parent.BackColor = System.Drawing.SystemColors.ControlDark;
+                    }
+
+                }
                 temp--;
             }
 
-            for (int i = week - 1; i < lastDay.Day+(week - 1); i++)
+            for (int i = week - 1; i < lastDay.Day + (week - 1); i++)
             {
-                if (pickYear == DateTime.Now.Year && pickMoth == DateTime.Now.Month )
+                if (pick && pickLabel != null && (pickYear + "-" + pickMoth + "-" + day).Equals(picDate))
                 {
-                    if (pick&&pickLabel!=null) {
+                    pickLabel = (System.Windows.Forms.Label)tableLayoutPanel1.Controls[i].Controls[0];
+                    if (this.BackColor.Equals(System.Drawing.SystemColors.Control))
+                    {
                         pickLabel.Parent.BackColor = Color.White;
                     }
-                    if (day == DateTime.Now.Day)
+                    else
                     {
-                        tableLayoutPanel1.Controls[i].Controls[0].BackColor = System.Drawing.SystemColors.ControlLight;
+                        pickLabel.Parent.BackColor = System.Drawing.SystemColors.ControlDark;
                     }
-                    else {
-                        tableLayoutPanel1.Controls[i].Controls[0].BackColor = System.Drawing.SystemColors.Control;
-                    }
+
                 }
-                else {
-                    tableLayoutPanel1.Controls[i].Controls[0].BackColor = System.Drawing.SystemColors.Control;
+
+                if (pickYear == DateTime.Now.Year && pickMoth == DateTime.Now.Month&& day == DateTime.Now.Day)
+                {
+                   tableLayoutPanel1.Controls[i].Controls[0].BackColor = System.Drawing.SystemColors.ControlLight;
+                }
+                else
+                {
+                    tableLayoutPanel1.Controls[i].Controls[0].BackColor = this.BackColor;
                 }
                 tableLayoutPanel1.Controls[i].Controls[0].ForeColor = System.Drawing.SystemColors.ControlDarkDark; ;
                 tableLayoutPanel1.Controls[i].Controls[0].Text = day + "";
@@ -188,14 +228,28 @@ namespace DatePicker
             }
 
 
-            for (int i = lastDay.Day + week-1 ; i < tableLayoutPanel1.Controls.Count; i++)
+            for (int i = lastDay.Day + week - 1; i < tableLayoutPanel1.Controls.Count; i++)
             {
-                
-                tableLayoutPanel1.Controls[i].Controls[0].Parent.BackColor = System.Drawing.SystemColors.Control;
-                tableLayoutPanel1.Controls[i].Controls[0].BackColor = System.Drawing.SystemColors.Control;
+
+               
+                tableLayoutPanel1.Controls[i].Controls[0].Parent.BackColor = this.BackColor;
+                tableLayoutPanel1.Controls[i].Controls[0].BackColor = this.BackColor;
                 tableLayoutPanel1.Controls[i].Controls[0].ForeColor = System.Drawing.SystemColors.ControlDark;
                 tableLayoutPanel1.Controls[i].Controls[0].Text = nextday + "";
                 tableLayoutPanel1.Controls[i].Controls[0].Tag = nextMoth[0] + "-" + nextMoth[1] + "-" + nextday;
+                if (pick && pickLabel != null && (nextMoth[0] + "-" + nextMoth[1] + "-" + nextday).Equals(picDate))
+                {
+                    pickLabel = (System.Windows.Forms.Label)tableLayoutPanel1.Controls[i].Controls[0];
+                    if (this.BackColor.Equals(System.Drawing.SystemColors.Control))
+                    {
+                        pickLabel.Parent.BackColor = Color.White;
+                    }
+                    else
+                    {
+                        pickLabel.Parent.BackColor = System.Drawing.SystemColors.ControlDark;
+                    }
+
+                }
                 nextday++;
 
             }
@@ -250,7 +304,7 @@ namespace DatePicker
             }
             if (NextMonth != null)
             {
-                NextMonth(this, pickYear+"-"+pickMoth+"-"+1);
+                NextMonth(this, pickYear + "-" + pickMoth + "-" + 1);
             }
             loadMoth();
         }
@@ -269,7 +323,7 @@ namespace DatePicker
             }
             if (BeforMonth != null)
             {
-                BeforMonth(this, pickYear + "-" + pickMoth+"-"+1);
+                BeforMonth(this, pickYear + "-" + pickMoth + "-" + 1);
             }
             loadMoth();
         }
@@ -282,7 +336,7 @@ namespace DatePicker
             pickDay = DateTime.Now.Day;
             if (NowMonth != null)
             {
-                NowMonth(this, pickYear + "-" + pickMoth+"-"+ pickDay);
+                NowMonth(this, pickYear + "-" + pickMoth + "-" + pickDay);
             }
             loadMoth();
         }
@@ -292,6 +346,39 @@ namespace DatePicker
         {
 
             this.TimeLable.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+        }
+
+        //鼠标移除事件 去掉显示白色选中框框
+        private void Daylabe_MouseLeave(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Label lable = (System.Windows.Forms.Label)sender;
+            if (!pick || !lable.Equals(pickLabel))
+            {
+                lable.Parent.BackColor = this.BackColor;// System.Drawing.SystemColors.Control;
+            }
+
+        }
+        //鼠标进入事件 显示白色选中框框
+        private void Daylabe_MouseEnter(object sender, EventArgs e)
+        {
+
+            System.Windows.Forms.Label lable = (System.Windows.Forms.Label)sender;
+            if (!lable.Text.Equals(""))
+            {
+                if ((pick && !lable.Equals(pickLabel)) || !pick)
+                {
+                    if (this.BackColor.Equals(System.Drawing.SystemColors.Control))
+                    {
+                        lable.Parent.BackColor = Color.White;
+                    }
+                    else
+                    {
+                        lable.Parent.BackColor = System.Drawing.SystemColors.ControlDark;
+                    }
+
+                }
+            }
+
         }
 
         #region 组件设计器生成的代码
@@ -1609,18 +1696,18 @@ namespace DatePicker
             this.daylabel42.TabIndex = 2;
             this.daylabel42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // MainControl
+            // DatePickerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.DatePickPanel);
             this.Controls.Add(this.MonthGoingProgressBar);
             this.Controls.Add(this.DateLable);
             this.Controls.Add(this.TimeLable);
-            this.Name = "MainControl";
+            this.Name = "DatePickerControl";
             this.Size = new System.Drawing.Size(453, 596);
             this.Load += new System.EventHandler(this.MainControl_Load);
             this.DatePickPanel.ResumeLayout(false);
@@ -1675,30 +1762,7 @@ namespace DatePicker
 
         }
 
-        //鼠标移除事件 去掉显示白色选中框框
-        private void Daylabe_MouseLeave(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Label lable = (System.Windows.Forms.Label)sender;
-            if (!pick || !lable.Equals(pickLabel)) {
-                lable.Parent.BackColor = System.Drawing.SystemColors.Control;
-            }
-           
-        }
-        //鼠标进入事件 显示白色选中框框
-        private void Daylabe_MouseEnter(object sender, EventArgs e)
-        {
 
-            System.Windows.Forms.Label lable = (System.Windows.Forms.Label)sender;
-            if (!lable.Text.Equals(""))
-            {
-                if (pick && !lable.Equals(pickLabel)) {
-                    lable.Parent.BackColor = Color.White;
-                }else if(!pick){
-                    lable.Parent.BackColor = Color.White;
-                }
-            }
-
-        }
 
         #endregion
 

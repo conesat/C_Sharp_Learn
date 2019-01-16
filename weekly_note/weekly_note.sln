@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weekly_note", "weekly_note\weekly_note.csproj", "{ABEC714B-8F4F-4AEB-9184-18164FD690E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weekly_list_item", "..\Weekly_List_Item\Weekly_List_Item\weekly_list_item.csproj", "{F4500C75-2602-47D5-8AD6-5FAF2E306866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatePicker", "..\date_picker\DatePicker\DatePicker\DatePicker.csproj", "{FF402485-934A-4E44-9905-0B08ABBE522E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABEC714B-8F4F-4AEB-9184-18164FD690E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABEC714B-8F4F-4AEB-9184-18164FD690E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABEC714B-8F4F-4AEB-9184-18164FD690E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABEC714B-8F4F-4AEB-9184-18164FD690E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4500C75-2602-47D5-8AD6-5FAF2E306866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4500C75-2602-47D5-8AD6-5FAF2E306866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4500C75-2602-47D5-8AD6-5FAF2E306866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4500C75-2602-47D5-8AD6-5FAF2E306866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF402485-934A-4E44-9905-0B08ABBE522E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF402485-934A-4E44-9905-0B08ABBE522E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF402485-934A-4E44-9905-0B08ABBE522E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF402485-934A-4E44-9905-0B08ABBE522E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21C3F772-A722-47CC-A36F-64C212913C1F}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.MainPointForm.resources
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\nncq周报便签.exe.config
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\nncq周报便签.exe
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\nncq周报便签.pdb
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\nncqweekly.Properties.Resources.resources
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\nncq周报便签.exe
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\nncq周报便签.pdb
+C:\Users\Administrator\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\nncqweekly.form.MainForm.resources

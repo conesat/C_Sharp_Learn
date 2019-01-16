@@ -17,7 +17,7 @@ namespace DatePicker
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
 
         }
-        Bitmap bmp = new Bitmap(global::DatePicker.Properties.Resources.rbg);
+        Bitmap bmp = new Bitmap(global::DatePicker.Properties.Resources.rbg1);
 
         Brush bush = new SolidBrush(Color.Green);//填充的颜色
         public int X = -100;
@@ -32,18 +32,7 @@ namespace DatePicker
         private void DrawRender(Graphics gs)
         {
             gs.Clear(this.BackColor);
-          
-            //环形；
-           // path.AddEllipse(X - 50, Y - 50, 100, 100);
-          //  path.AddEllipse(25, 25, 50, 50);
-            //径向渐变刷
-           // PathGradientBrush brush = new PathGradientBrush(path); //using System.Drawing.Drawing2D;
-          //  brush.CenterColor = Color.White;
-            //边缘颜色；
-          //  brush.SurroundColors = new Color[] { Color.Transparent };
-          //  gs.FillPath(brush, path);
-            // gs.FillEllipse(bush, X - 50, Y - 50, 100, 100);//画填充椭圆的方法，x坐标、y坐标、宽、高，如果是100，则半径为50
-           
+         
             gs.DrawImage(
                      bmp,
                      new Rectangle(X - 100, Y - 100, 200, 200),
