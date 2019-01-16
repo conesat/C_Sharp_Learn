@@ -1,0 +1,9 @@
+D:\项目\CSharp\Weekly_List_Item\Weekly_List_Item\bin\Debug\Weekly_List_Item.dll
+D:\项目\CSharp\Weekly_List_Item\Weekly_List_Item\bin\Debug\Weekly_List_Item.pdb
+D:\项目\CSharp\Weekly_List_Item\Weekly_List_Item\obj\Debug\Weekly_List_Item.ItemTow.resources
+D:\项目\CSharp\Weekly_List_Item\Weekly_List_Item\obj\Debug\Weekly_List_Item.Properties.Resources.resources
+D:\项目\CSharp\Weekly_List_Item\Weekly_List_Item\obj\Debug\Weekly_List_Item.ItemOne.resources
+D:\项目\CSharp\Weekly_List_Item\Weekly_List_Item\obj\Debug\weekly_list_item.csproj.GenerateResource.cache
+D:\项目\CSharp\Weekly_List_Item\Weekly_List_Item\obj\Debug\weekly_list_item.csproj.CoreCompileInputs.cache
+D:\项目\CSharp\Weekly_List_Item\Weekly_List_Item\obj\Debug\Weekly_List_Item.dll
+D:\项目\CSharp\Weekly_List_Item\Weekly_List_Item\obj\Debug\Weekly_List_Item.pdb
